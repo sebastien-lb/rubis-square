@@ -25,7 +25,7 @@ type Props = OwnProps & StateProps & DispatchProps;
 export const GameComponent: React.FC<Props> = (props: Props) => {
   const { classes, game, click } = props;
 
-  const handleClick = (x: number, y: number) => () => click(x, y);
+  const handleClick = (x: number, y: number) => (): void => click(x, y);
   return (
     <div className={classes.container}>
       {game &&
@@ -39,7 +39,7 @@ export const GameComponent: React.FC<Props> = (props: Props) => {
 };
 
 const styles: Style = (theme: CustomTheme): Record<ClassNames, ((p: Props) => CSSProperties) | CSSProperties> => ({
-  container: (props: Props) => ({
+  container: (props: Props): CSSProperties => ({
     display: 'grid',
     gridTemplateColumns: props.game ? getGridDisplay(props.game) : '',
     width: props.game ? theme.custom.size.tile * (getGameLength(props.game) + 1) : 'unset',

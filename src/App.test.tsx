@@ -10,7 +10,7 @@ import { theme } from './style/theme';
 
 import App from './App';
 test('Renders learn react link', () => {
-  const { getByText } = render(
+  render(
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <ThemeProvider theme={theme}>

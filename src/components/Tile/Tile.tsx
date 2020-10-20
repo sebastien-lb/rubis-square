@@ -16,7 +16,7 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-const getSpecificClassName = (generatedClassName: string) => `.${generatedClassName.split(' ')[1]}`;
+const getSpecificClassName = (generatedClassName: string): string => `.${generatedClassName.split(' ')[1]}`;
 
 export const Tile: React.FC<Props> = (props: Props) => {
   const { classes, onClick, value } = props;
@@ -33,7 +33,7 @@ export const Tile: React.FC<Props> = (props: Props) => {
 };
 
 const styles: Style = (theme: CustomTheme): Record<ClassNames, ((p: Props) => CSSProperties) | CSSProperties> => ({
-  container: (props: Props) => ({
+  container: (props: Props): CSSProperties => ({
     height: theme.custom.size.tile,
     width: theme.custom.size.tile,
     background: theme.custom.tileColors[props.value],
