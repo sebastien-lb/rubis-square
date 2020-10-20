@@ -31,6 +31,6 @@ export const theme: CustomTheme = {
     size: {
       tile: 50,
     },
-    tileColors: [red[600], blue[600], green[600], purple[600], amber[600]],
+    tileColors: [red[300], blue[300], green[300], purple[300], amber[300]],
   },
 };
