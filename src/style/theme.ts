@@ -17,7 +17,7 @@ interface CustomProps {
     size: {
       tile: number;
     };
-    tileColors: Array<string>;
+    tileColors: string[];
   };
 }
 

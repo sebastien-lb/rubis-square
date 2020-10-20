@@ -1,5 +1,5 @@
-export type BoardLine = Array<number>;
-export type Board = Array<BoardLine>;
+export type BoardLine = number[];
+export type Board = BoardLine[];
 
 /**
  * board represents the board of the game, the number is the mapping to the corresponding color
@@ -18,7 +18,7 @@ export interface GameDefinition {
  *  X
  */
 export interface ChangePolicy {
-  mask: Array<Array<boolean>>;
+  mask: boolean[][];
 }
 
 const defaultPolicy = {
@@ -29,13 +29,13 @@ const defaultPolicy = {
   ],
 };
 
-export const getPolicyHeight = (policy: ChangePolicy) => (policy.mask.length - 1) / 2;
-export const getPolicyLength = (policy: ChangePolicy) => policy.mask.length && (policy.mask[0].length - 1) / 2;
+export const getPolicyHeight = (policy: ChangePolicy): number => (policy.mask.length - 1) / 2;
+export const getPolicyLength = (policy: ChangePolicy): number => policy.mask.length && (policy.mask[0].length - 1) / 2;
 
-export const getGameHeight = (game: GameDefinition) => game.board.length;
-export const getGameLength = (game: GameDefinition) => game.board.length && game.board[0].length;
+export const getGameHeight = (game: GameDefinition): number => game.board.length;
+export const getGameLength = (game: GameDefinition): number => game.board.length && game.board[0].length;
 
-export const increment = (nbColor: number) => (value: number) => (value + 1) % nbColor;
+export const increment = (nbColor: number) => (value: number): number => (value + 1) % nbColor;
 
 export const isGameWon = (game: GameDefinition): boolean => {
   const firstValue = game.board[0][0];
@@ -47,7 +47,7 @@ export const isGameWon = (game: GameDefinition): boolean => {
 export const isAffectedByPolicy = (policy: ChangePolicy) => (xClick: number, yClick: number) => (
   x: number,
   y: number,
-) => {
+): boolean => {
   const policyHeight = getPolicyHeight(policy);
   const policyLength = getPolicyLength(policy);
   return (
@@ -61,7 +61,7 @@ export const isAffectedByPolicy = (policy: ChangePolicy) => (xClick: number, yCl
 
 export const isAffectedByDefaultPolicy = isAffectedByPolicy(defaultPolicy);
 
-export const processClick = (policy: ChangePolicy) => (game: GameDefinition, x: number, y: number) => {
+export const processClick = (policy: ChangePolicy) => (game: GameDefinition, x: number, y: number): GameDefinition => {
   const gameHeight = getGameHeight(game);
   const gameLength = getGameLength(game);
 
