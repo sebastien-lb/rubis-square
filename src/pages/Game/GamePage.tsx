@@ -1,7 +1,7 @@
-// import React from 'react'
-// import { withStyles } from '@material-ui/core/styles';
-// import { Style } from 'jss';
-// import { CSSProperties } from '@material-ui/styles';
+import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import { Style } from 'jss';
+import { CSSProperties } from '@material-ui/styles';
 
 import { CustomTheme } from '../../style/theme';
 import { GameComponent } from '../../components';
@@ -17,7 +17,7 @@ export const GamePage: React.FC<Props> = (props: Props) => {
   const { classes } = props;
   return (
     <div className={classes.container}>
-      <span>Rubis Square new branch</span>
+      <span>Rubis Square new branch with new feature</span>
       <div className={classes.gameContainer}>
         <GameComponent />
       </div>
