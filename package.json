@@ -31,6 +31,8 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
+    "lint": "eslint --fix ./src/**/*.[tj]s",
+    "lint:ci": "eslint --format stylish ./src/**/*.[tj]s",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
