@@ -17,7 +17,7 @@ export const GamePage: React.FC<Props> = (props: Props) => {
   const { classes } = props;
   return (
     <div className={classes.container}>
-      <span>Rubis Square</span>
+      <span>Rubis Square PE v2</span>
       <div className={classes.gameContainer}>
         <GameComponent />
       </div>
