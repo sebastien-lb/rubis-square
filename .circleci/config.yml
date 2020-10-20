@@ -38,3 +38,5 @@ jobs:
 
       # build app
       - run: yarn build
+
+      - run: yarn audit
