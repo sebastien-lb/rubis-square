@@ -10,6 +10,7 @@ import { GameDefinition, BoardLine, getGameLength } from '../../services/game-se
 type ClassNames = 'container';
 interface OwnProps {
   classes: Record<ClassNames, string>;
+  sizeMultiplier: number;
 }
 
 export interface StateProps {
@@ -23,7 +24,7 @@ export interface DispatchProps {
 type Props = OwnProps & StateProps & DispatchProps;
 
 export const GameComponent: React.FC<Props> = (props: Props) => {
-  const { classes, game, click } = props;
+  const { classes, sizeMultiplier, game, click } = props;
 
   const handleClick = (x: number, y: number) => () => click(x, y);
   return (
@@ -31,7 +32,7 @@ export const GameComponent: React.FC<Props> = (props: Props) => {
       {game &&
         game.board.map((boardLine: BoardLine, y: number) =>
           boardLine.map((value: number, x: number) => (
-            <Tile value={value} onClick={handleClick(x, y)} key={`${value}${x}${y}`} />
+            <Tile value={value} sizeMultiplier={sizeMultiplier} onClick={handleClick(x, y)} key={`${value}${x}${y}`} />
           )),
         )}
     </div>

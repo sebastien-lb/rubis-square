@@ -10,6 +10,7 @@ import anime from 'animejs';
 type ClassNames = 'container';
 interface OwnProps {
   classes: Record<ClassNames, string>;
+  sizeMultiplier: number;
   onClick: () => void;
   value: number;
 }
@@ -34,8 +35,8 @@ export const Tile: React.FC<Props> = (props: Props) => {
 
 const styles: Style = (theme: CustomTheme): Record<ClassNames, ((p: Props) => CSSProperties) | CSSProperties> => ({
   container: (props: Props) => ({
-    height: theme.custom.size.tile,
-    width: theme.custom.size.tile,
+    height: theme.custom.size.tile * props.sizeMultiplier,
+    width: theme.custom.size.tile * props.sizeMultiplier,
     background: theme.custom.tileColors[props.value],
     borderRadius: '50%',
     justifySelf: 'center',
