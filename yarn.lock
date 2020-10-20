@@ -1712,10 +1712,10 @@
   resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-7.1.2.tgz#3a71bb8a45a1e08b71a54c9efcee9927f3895e80"
   integrity sha512-lDyCVxxgX5lrgCa75ELCfWcdEDyfisjqoDIM3YsghQ+lyViIac/qT67qabQ/HmoVxyikFKovjKwWdn3b/oKhZA==
 
-"@types/animejs@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@types/animejs/-/animejs-3.1.0.tgz#9fa31e5fcf3a0304aa097a2a357e03630d820ab1"
-  integrity sha512-OOOQ11ylW8GeFY85yM3HrprR5wZl1R1KsxrxNLMpE9l24zs+4yXAu4WsDESWcCAf5+PxvPNsLV9W/PB3J+XGMQ==
+"@types/animejs@^3.1.2":
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/@types/animejs/-/animejs-3.1.2.tgz#93289a902b0b9bfac3020d29413139dcca6acdbc"
+  integrity sha512-GyyuoztWbZMErx9brJQChvvfeMd5vplWU/H6BYVl7JUcLoMaDOVxlqF3d4ypB7TzXnbgnMSykGmjAVVRsvhHhQ==
 
 "@types/babel__core@^7.1.0":
   version "7.1.10"
