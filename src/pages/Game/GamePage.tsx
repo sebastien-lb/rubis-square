@@ -14,7 +14,7 @@ interface OwnProps {
 type Props = OwnProps;
 
 const generateRandomSizeMultiplier = () : number => {
-  return Math.random() * 0.5 + 0.5;
+  return Math.random() * 0.4 + 0.7;
 }
 
 export const GamePage: React.FC<Props> = (props: Props) => {
@@ -26,7 +26,7 @@ export const GamePage: React.FC<Props> = (props: Props) => {
       <div className={classes.gameContainer}>
         <GameComponent sizeMultiplier={sizeMultiplier} />
       </div>
-      <button className={classes.button} onClick={() => setSizeMultiplier(generateRandomSizeMultiplier())}>Randomize tile size</button>
+      <button className={classes.button} onClick={() => setSizeMultiplier(generateRandomSizeMultiplier())}>Randomize!</button>
     </div>
   );
 };
